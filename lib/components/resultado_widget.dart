@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
-  final bool venceu;
+  final bool? venceu;
   final Function() onReiniciar;
 
   ResultadoWidget({
@@ -14,7 +14,7 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   Color _getCor(){
     if(venceu == null){
       return Colors.yellow;
-    }else if(venceu){
+    }else if(venceu!){
       return Colors.green.shade300;
     }else{
       return Colors.red.shade300;
@@ -24,7 +24,7 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   IconData _getIcon(){
     if(venceu == null){
       return Icons.sentiment_satisfied;
-    }else if(venceu){
+    }else if(venceu!){
       return Icons.sentiment_very_satisfied;
     }else{
       return Icons.sentiment_very_dissatisfied;
